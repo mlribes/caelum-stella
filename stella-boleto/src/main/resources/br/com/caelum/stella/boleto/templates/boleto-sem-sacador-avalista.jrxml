@@ -28,7 +28,7 @@
 		<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="2"/>
 	</style>
 	<style name="Txt_Peq" style="Txt_Normal" fontSize="7"/>
-	<style name="Txt_valor" style="Txt_Normal" hAlign="Right"  pattern="###0.00">
+	<style name="Txt_valor" style="Txt_Normal" hAlign="Right"  pattern="#,##0.00">
 		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="10"/>
 	</style>
 	<style name="Txt_Data" style="Txt_Normal" pattern="dd/MM/yyyy"/>
@@ -875,9 +875,9 @@
 					</datasetRun>
 					<jr:listContents height="14" width="379">
 						<frame>
-							<reportElement x="0" y="0" width="250" height="14" uuid="14cb57d1-f790-4fd5-ae3b-e707c7935d3a"/>
-							<textField>
-								<reportElement style="Txt_Peq" x="0" y="2" width="250" height="10" uuid="4b96d4fc-ae6d-461f-94dc-9d7faba58842"/>
+							<reportElement x="0" y="0" width="376" height="14" uuid="14cb57d1-f790-4fd5-ae3b-e707c7935d3a"/>
+							<textField textAdjust="StretchHeight">
+								<reportElement style="Txt_Peq" x="0" y="2" width="376" height="10" uuid="4b96d4fc-ae6d-461f-94dc-9d7faba58842"/>
 								<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 									<leftPen lineWidth="0.0"/>
 									<bottomPen lineWidth="0.0"/>

@@ -8,7 +8,7 @@
 	</field>
 	<detail>
 		<band height="14" splitType="Stretch">
-			<textField isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2" y="2" width="384" height="11" uuid="b95bbc13-9427-42d1-b018-a1758c7d4c8a"/>
 				<textElement>
 					<font fontName="Arial" size="7"/>

@@ -26,7 +26,7 @@
 		<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="2"/>
 	</style>
 	<style name="Txt_Peq" style="Txt_Normal" fontSize="7"/>
-	<style name="Txt_valor" style="Txt_Normal" hAlign="Right" pattern="###0.00">
+	<style name="Txt_valor" style="Txt_Normal" hAlign="Right" pattern="#,##0.00">
 		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="10"/>
 	</style>
 	<style name="Txt_Data" style="Txt_Normal" pattern="dd/MM/yyyy"/>
