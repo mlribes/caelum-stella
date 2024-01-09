@@ -11,7 +11,7 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.export.JRHtmlExporter;
+import net.sf.jasperreports.engine.export.HtmlExporter;
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter;
 import net.sf.jasperreports.j2ee.servlets.ImageServlet;
 import br.com.caelum.stella.boleto.Boleto;
@@ -26,11 +26,11 @@ import br.com.caelum.stella.boleto.exception.GeracaoBoletoException;
 @SuppressWarnings("deprecation")
 public class GeradorDeBoletoHTML extends GeradorDeBoleto {
 	
-	private JRHtmlExporter exporter = new JRHtmlExporter();
+	private HtmlExporter exporter = new HtmlExporter();
 
 	{
 		exporter.setParameter(JRHtmlExporterParameter.CHARACTER_ENCODING, "ISO-8859-1");
-		exporter.setParameter(JRHtmlExporterParameter.IS_USING_IMAGES_TO_ALIGN, Boolean.FALSE);
+		//exporter.setParameter(JRHtmlExporterParameter.IS_USING_IMAGES_TO_ALIGN, Boolean.FALSE);
 		exporter.setParameter(JRHtmlExporterParameter.ZOOM_RATIO, 1.3F);
 		exporter.setParameter(JRHtmlExporterParameter.IMAGES_URI, "stella-boleto?image=");
 		exporter.setParameter(JRHtmlExporterParameter.CHARACTER_ENCODING, "ISO-8859-1");
@@ -96,7 +96,7 @@ public class GeradorDeBoletoHTML extends GeradorDeBoleto {
 	 */
 	public void geraHTML(Writer writer, HttpServletRequest request) {
 		try {
-			JRHtmlExporter exporter = getHtmlExporter(request);
+			HtmlExporter exporter = getHtmlExporter(request);
 			exporter.setParameter(JRHtmlExporterParameter.OUTPUT_WRITER, writer);
 			exporter.exportReport();	
 		} catch (JRException e) {
@@ -110,7 +110,7 @@ public class GeradorDeBoletoHTML extends GeradorDeBoleto {
 	 * @param request requisição.
 	 * @return exporter do Jasper configurado.
 	 */
-	protected JRHtmlExporter getHtmlExporter(HttpServletRequest request) {
+	protected HtmlExporter getHtmlExporter(HttpServletRequest request) {
 		JasperPrint relatorio = geraRelatorio();
 
 		exporter.setParameter(JRHtmlExporterParameter.JASPER_PRINT, relatorio);

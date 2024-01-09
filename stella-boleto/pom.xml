@@ -16,13 +16,13 @@
 		<dependency>
 			<groupId>br.com.caelum.stella</groupId>
 			<artifactId>caelum-stella-core</artifactId>
-			<version>2.1.7-SNAPSHOT</version>
+			<version>2.1.6</version>
 		</dependency>
 
 	    <dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>5.5.0</version>
+			<version>6.21.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>jfree</groupId>
@@ -165,7 +165,7 @@
 						<dependency>
 							<groupId>net.sf.jasperreports</groupId>
 							<artifactId>jasperreports</artifactId>
-							<version>5.5.0</version>
+							<version>6.21.0</version>
 						</dependency>
 						<dependency>
 							<groupId>org.mortbay.jetty</groupId>
