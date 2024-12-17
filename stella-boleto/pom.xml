@@ -22,24 +22,22 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.1.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>xml-apis</groupId>
-                    <artifactId>xml-apis</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.glassfish.jersey.media</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>        
+            <version>7.0.1</version>
         </dependency>
-		
-        <!-- Código de Barras -->
         <dependency>
-            <groupId>net.sourceforge.barbecue</groupId>
-            <artifactId>barbecue</artifactId>
-            <version>1.5-beta1</version>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-pdf</artifactId>
+            <version>7.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-servlets</artifactId>
+            <version>7.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-barbecue</artifactId>
+            <version>7.0.1</version>
         </dependency>
 
         <!-- Testes do PDF -->
@@ -52,9 +50,9 @@
 		
         <!-- Boleto HTML -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>		
@@ -96,31 +94,6 @@
                         </execution>
                     </executions>
                 </plugin>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.codehaus.mojo</groupId>
-                                        <artifactId>jasperreports-maven-plugin</artifactId>
-                                        <versionRange>[1.0-beta-2,)</versionRange>
-                                        <goals>
-                                            <goal>compile-reports</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -132,32 +105,43 @@
             </plugin>
 			
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
+                <groupId>com.pro-crafting.tools</groupId>
                 <artifactId>jasperreports-maven-plugin</artifactId>
-                <version>1.0-beta-2</version>
+                <version>4.0.0</version>
                 <configuration>
                     <sourceDirectory>src/main/resources</sourceDirectory>
-                    <maven.compiler.source>1.8</maven.compiler.source>
-                    <maven.compiler.target>1.8</maven.compiler.target>
-                    <compiler>net.sf.jasperreports.engine.design.JRJdtCompiler</compiler>
+                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                    <verbose>true</verbose>
                 </configuration>
                 <dependencies>
+                <!--
                     <dependency>
                         <groupId>net.sf.jasperreports</groupId>
                         <artifactId>jasperreports</artifactId>
-                        <version>6.1.0</version>
+                        <version>7.0.1</version>
                     </dependency>
                     <dependency>
-                        <groupId>org.mortbay.jetty</groupId>
-                        <artifactId>servlet-api</artifactId>
-                        <version>3.0.20100224</version>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-core</artifactId>
+                        <version>2.24.3</version>
                     </dependency>
+                    <dependency>
+                       <groupId>net.sf.jasperreports</groupId>
+                       <artifactId>jasperreports-barbecue</artifactId>
+                       <version>7.0.1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>jakarta.servlet</groupId>
+                        <artifactId>jakarta.servlet-api</artifactId>
+                        <version>6.1.0</version>
+                    </dependency>
+                    -->
                 </dependencies>
                 <executions>
                     <execution>
                         <phase>compile</phase>
                         <goals>
-                            <goal>compile-reports</goal>
+                            <goal>jasper</goal>
                         </goals>
                     </execution>
                 </executions>

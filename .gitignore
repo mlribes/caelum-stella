@@ -22,3 +22,5 @@ velocity.log*
 *.swp
 *.pdf
 .idea
+.vscode
+effective-pom.xml
