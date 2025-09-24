@@ -19,8 +19,10 @@ import br.com.caelum.stella.validation.error.CNPJError;
  */
 public class CNPJValidator implements Validator<String> {
 
-    public static final Pattern FORMATED = Pattern.compile("(\\d{2})[.](\\d{3})[.](\\d{3})/(\\d{4})-(\\d{2})");
-    public static final Pattern UNFORMATED = Pattern.compile("(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})");
+    public static final Pattern FORMATTED = Pattern.compile(
+            "([0-9A-Z]{2})[.]([0-9A-Z]{3})[.]([0-9A-Z]{3})/([0-9A-Z]{4})-([0-9]{2})");
+    public static final Pattern UNFORMATTED = Pattern.compile(
+            "([0-9A-Z]{2})([0-9A-Z]{3})([0-9A-Z]{3})([0-9A-Z]{4})([0-9]{2})");
 	
     private boolean isFormatted = false;
     private boolean isIgnoringRepeatedDigits;
@@ -86,7 +88,7 @@ public class CNPJValidator implements Validator<String> {
         
         if (cnpj != null) {
 
-        	if(isFormatted != FORMATED.matcher(cnpj).matches()) {
+        	if(isFormatted != FORMATTED.matcher(cnpj).matches()) {
         		errors.add(messageProducer.getMessage(CNPJError.INVALID_FORMAT));
         	}
         	
@@ -97,8 +99,8 @@ public class CNPJValidator implements Validator<String> {
         		errors.add(messageProducer.getMessage(CNPJError.INVALID_DIGITS));
         		return errors;
         	}
-        	
-            if(unformatedCNPJ.length() != 14 || !unformatedCNPJ.matches("[0-9]*")){
+
+            if (unformatedCNPJ.length() != 14 || !unformatedCNPJ.matches("[0-9A-Z]*")) {
             	errors.add(messageProducer.getMessage(CNPJError.INVALID_DIGITS));
             }
             
@@ -141,9 +143,9 @@ public class CNPJValidator implements Validator<String> {
 		}
         boolean result;
         if (isFormatted) {
-            result = FORMATED.matcher(value).matches();
+            result = FORMATTED.matcher(value).matches();
         } else {
-            result = UNFORMATED.matcher(value).matches();
+            result = UNFORMATTED.matcher(value).matches();
         }
         return result;
     }
