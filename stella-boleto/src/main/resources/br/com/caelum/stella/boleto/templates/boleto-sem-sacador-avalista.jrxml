@@ -201,7 +201,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="1d5919bf-162d-49ff-8b7d-43d64d2a71b8" positionType="FixRelativeToBottom" x="450" y="278" width="103" height="14" blankWhenNull="true" hTextAlign="Left" style="Txt_valor">
-				<expression><![CDATA[($F{valorCobrado}.compareTo(BigDecimal.ZERO) == 0) ? " " : $F{valorCobrado}.toString()]]></expression>
+				<expression><![CDATA[($F{valorCobrado}.compareTo(BigDecimal.ZERO) == 0) ? null : $F{valorCobrado}]]></expression>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2" style="Txt_valor">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
@@ -361,7 +361,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="96cd37ba-bb49-4182-8942-17fdc7885eda" positionType="FixRelativeToBottom" x="391" y="512" width="162" height="14" blankWhenNull="true" hTextAlign="Left" style="Txt_valor">
-				<expression><![CDATA[($F{valorDescontos}.compareTo(BigDecimal.ZERO) == 0) ? " " : $F{valorDescontos}.toString()]]></expression>
+				<expression><![CDATA[($F{valorDescontos}.compareTo(BigDecimal.ZERO) == 0) ? null : $F{valorDescontos}]]></expression>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2" style="Txt_valor">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
@@ -550,7 +550,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="0a791ab6-641e-4a4a-b3fd-c907a6320d3d" positionType="FixRelativeToBottom" x="391" y="536" width="162" height="14" blankWhenNull="true" hTextAlign="Left" style="Txt_valor">
-				<expression><![CDATA[($F{valorMulta}.compareTo(BigDecimal.ZERO) == 0) ? "" : $F{valorMulta}.toString()]]></expression>
+				<expression><![CDATA[($F{valorMulta}.compareTo(BigDecimal.ZERO) == 0) ? null : $F{valorMulta}]]></expression>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2" style="Txt_valor">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
@@ -699,7 +699,7 @@
 				</box>
 			</element>
 			<element kind="textField" uuid="492ad5e3-2468-418e-ba03-ac0b19ba2339" positionType="FixRelativeToBottom" x="391" y="560" width="162" height="14" blankWhenNull="true" hTextAlign="Left" style="Txt_valor">
-				<expression><![CDATA[($F{valorCobrado}.compareTo(BigDecimal.ZERO) == 0) ? " " : $F{valorCobrado}.toString()]]></expression>
+				<expression><![CDATA[($F{valorCobrado}.compareTo(BigDecimal.ZERO) == 0) ? null : $F{valorCobrado}]]></expression>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2" style="Txt_valor">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
