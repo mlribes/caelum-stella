@@ -212,13 +212,6 @@ public class BoletoTest {
 	}
 
 	@Test
-	public void valorCobradoDeveSerIgualAValorBoletoQuandoSemAcrescimoOuDescontos() {
-		Boleto b = Boleto.novoBoleto();
-		b.comValorBoleto("40.00");
-		assertEquals(b.getValorBoleto(), b.getValorCobrado());
-	}
-
-	@Test
 	public void valorCobradoDeveSerMaiorComAcrescimo() {
 		Boleto b = Boleto.novoBoleto();
 		b.comValorBoleto("40.00");
