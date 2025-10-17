@@ -47,6 +47,12 @@ public enum Bancos {
 		public Banco getBanco() {
 			return new Santander();
 		}
+	},
+	SICREDI("748", "Sicredi") {
+		@Override
+		public Banco getBanco() {
+			return new Sicredi();
+		}
 	};
 
 	private final String numeroDoBanco;
